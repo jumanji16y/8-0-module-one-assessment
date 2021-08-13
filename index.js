@@ -3,6 +3,7 @@
 
   Keep in mind that your functions must still have and use a parameter for accepting all movies.
 */
+const movies = require("./movies");
 const exampleMovies = require("./movies");
 // Do not change the line above.
 
@@ -28,8 +29,19 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
-
+function getAllMovieTitles() {
+  //what's our input: the titles property from the object movies 
+  //whats our output: all of the movie titles from our object movies stored in an array
+  //determine our value
+  let newArr = [];
+ //define our loop
+  for (let i = 0; i < movies.length; i++){
+    //accumulate!
+   newArr.push(movies.title)
+  }
+  return newArr;
+}
+//getAllMovieTitles()
 /**
  * getHighestMetascore()
  * -----------------------------
@@ -41,7 +53,17 @@ function getAllMovieTitles() {}
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore() {
+  let metascoreHigh = [];
+  // 2. Define your loop.
+  for (let i = 0; i < movies.length; i++) {
+    // 3. Accumulate!
+    metascoreHigh.push[movies.metascore];
+    
+  }
+  
+  return metascoreHigh;
+}
 
 /**
  * getAverageIMDBRating()
@@ -54,7 +76,18 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating() {
+  // what's our input: property imdbRatings 
+  // what's our output: the cumlative sum of all imdbRatings divided by the number of how many were added
+  // need if statement definitely case if array is empty and must return `0`
+  let total = 0;
+  let avg = total / movies.length;
+  for(let i = 0; i < movies.length; i++) {
+    total += movies[i].imdbRating;
+    //let avg = total / movies.length;
+  }
+  return avg;
+}
 
 /**
  * countByRating()
@@ -67,7 +100,10 @@ function getAverageIMDBRating() {}
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+function countByRating() {
+  //what is our input: 
+  // what is our output: 
+}
 
 /**
  * findById()
@@ -83,8 +119,18 @@ function countByRating() {}
       // Toy Story 4
     };
  */
-function findById() {}
-
+function findById() {
+  let movieName = "";
+  let noMovie = null;
+  for (let i = 0; i < movies.length; i++) {
+    if(movies[i].imdbID === imdbId) {
+      console.log(movies.title)
+    }else{
+      return noMovie;
+    }
+    return movieName
+  }
+}
 /**
  * filterByGenre()
  * -----------------------------
