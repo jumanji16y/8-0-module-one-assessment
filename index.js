@@ -54,17 +54,24 @@ function getAllMovieTitles() {
  *  //> 96
  */
 function getHighestMetascore() {
-  let metascoreHigh = [];
+  // what is our input: the `metascore` property from the object movies 
+  // what is our output: the highest `metascore` number in all of the object movies
+  // 1. determine our value:
+  let objMovies = [];
   // 2. Define your loop.
   for (let i = 0; i < movies.length; i++) {
     // 3. Accumulate!
-    metascoreHigh.push[movies.metascore];
+    if(movies.metascore) {
+    objMovies = Math.max(movies.metascore)
+    } else {
+      return 0
+    }
     
+    return objMovies;
   }
   
-  return metascoreHigh;
 }
-
+//getHighestMetascore()
 /**
  * getAverageIMDBRating()
  * -----------------------------
@@ -77,18 +84,20 @@ function getHighestMetascore() {
  *  //> 7.76
  */
 function getAverageIMDBRating() {
-  // what's our input: property imdbRatings 
-  // what's our output: the cumlative sum of all imdbRatings divided by the number of how many were added
-  // need if statement definitely case if array is empty and must return `0`
-  let total = 0;
-  let avg = total / movies.length;
+  // what's our input: the `imdbRating` property from the object movies   
+  // what's our output: the cumlative sum of all `imdbRating` divided by the number of how many were added
+  // need if statement case if array is empty and must return `0`
+  let result = 0; 
+  let avg = 0;
   for(let i = 0; i < movies.length; i++) {
-    total += movies[i].imdbRating;
+    result = movies.parseInt(movies.imdbRating) + result;
+    avg = (result) / movies.length;
+   // total += movies[i].imdbRating;
     //let avg = total / movies.length;
   }
   return avg;
 }
-
+getAverageIMDBRating()
 /**
  * countByRating()
  * -----------------------------
@@ -101,9 +110,21 @@ function getAverageIMDBRating() {
  *  //> { G: 3, PG: 7 }
  */
 function countByRating() {
-  //what is our input: 
-  // what is our output: 
+  // what's our input:  the object movies in which the `rated` property is being counted.
+  // what's our output: an object with keys that are movie ratings and values that represent the number of that rating in the object movies. 
+  // 1. Determine our initial vaule. (And, recommended: write the return immediately.)
+  let result = {};
+  // 2. Define your loop.
+  for(let i = 0; i < movies.length; i++) {
+    // 3. Accumulate!
+    if(movies.count === 0) {
+      let movies = movies[i];
+      result.push(movies.rated);
+    }
+  }
+  return result;
 }
+
 
 /**
  * findById()
@@ -151,7 +172,9 @@ function findById() {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre() {
+  
+}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
