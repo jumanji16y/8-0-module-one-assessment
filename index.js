@@ -33,11 +33,11 @@ function getAllMovieTitles() {
   //what's our input: the titles property from the object movies 
   //whats our output: all of the movie titles from our object movies stored in an array
   //determine our value
-  let newArr = [];
+  newArr = [];
  //define our loop
-  for (let i = 0; i < movies.length; i++){
+  for (let i = 0; i < movies.length; i++) {
     //accumulate!
-   newArr.push(movies.title)
+   newArr.push(movies[i].title);
   }
   return newArr;
 }
@@ -87,17 +87,21 @@ function getAverageIMDBRating() {
   // what's our input: the `imdbRating` property from the object movies   
   // what's our output: the cumlative sum of all `imdbRating` divided by the number of how many were added
   // need if statement case if array is empty and must return `0`
-  let result = 0; 
-  let avg = 0;
-  for(let i = 0; i < movies.length; i++) {
-    result = movies.parseInt(movies.imdbRating) + result;
-    avg = (result) / movies.length;
+  if (movies.length === 0) {
+    return 0
+  } else {
+    let result = 0; 
+   // let avg = 0;
+    for(let i = 0; i < movies.length; i++) {
+      result = movies[i].imdbRating
+    }
+    avg = result / movies.length;
    // total += movies[i].imdbRating;
     //let avg = total / movies.length;
   }
   return avg;
 }
-getAverageIMDBRating()
+//getAverageIMDBRating()
 /**
  * countByRating()
  * -----------------------------
